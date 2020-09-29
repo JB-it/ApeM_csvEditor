@@ -7,7 +7,7 @@
     //B2: Boolean
     //B3: Boolean
 
-    $filePath = "data/";
+    $filePath = "data/";    //file in folder data next to inde.php
     $fileName = "teachers.csv";
     $delimiter = ";";
 
