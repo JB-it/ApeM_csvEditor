@@ -7,7 +7,7 @@
     //B2: Boolean
     //B3: Boolean
 
-    $filePath = "data/";    //file in folder data next to inde.php
+    $filePath = "data/";
     $fileName = "teachers.csv";
     $delimiter = ";";
 
@@ -73,12 +73,14 @@
         $last = count($data);
         $last--;
 
-        foreach($data as $key=>$item)
+
+        foreach($data as $key=>$item)//Cut by \n
         {
             foreach(explode($delimiter, $item) as $value)
             {
                     $teacherArray[$key][$step++] = $value;
             }
+            $step = 0;
         }
         return json_encode($teacherArray);
     }
