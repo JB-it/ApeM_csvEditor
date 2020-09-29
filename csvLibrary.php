@@ -66,6 +66,7 @@
     function fileToJson()   //Info: json_encode(""); -> Array
     {
         global $file, $delimiter;
+        $keys = array("name", "password", "room", "b1", "b2", "b3");
         $data = file_get_contents($file);
         $data = explode("\n", $data);
 
@@ -73,14 +74,14 @@
         $last = count($data);
         $last--;
 
-
         foreach($data as $key=>$item)//Cut by \n
         {
             foreach(explode($delimiter, $item) as $value)
             {
-                    $teacherArray[$key][$step++] = $value;
+                    $teacherArray[$key][$keys[$step++]] = $value;   //Fill subarray-key with $keys content
+                    //$step++;
             }
-            $step = 0;
+            $step = 0;  //new $keys progress by new subarray
         }
         return json_encode($teacherArray);
     }
