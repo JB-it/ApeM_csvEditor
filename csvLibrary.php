@@ -8,12 +8,13 @@
     //B3: Boolean
 
     $delimiter = ";";
-    /*  Uncomment for splited path input
-    $filePath = "data/";
+    ///*  
+    //Uncomment for splited path input
+    $filePath = "./";
     $fileName = "teachers.csv";
     $file = $filePath.$fileName;
-    */
-    $file = '/var/www/dev.jonas-heinze.de/ApeM/data/teachers.csv';  //Comment, when using splited path input
+    //*/
+    //$file = '/var/www/dev.jonas-heinze.de/ApeM/data/teachers.csv';  //Comment, when using splited path input
 
     function addTeacher($name, $password, $room, $b1, $b2, $b3) {
         //Password to SHA512-Hash   Password + Name(as salt)
